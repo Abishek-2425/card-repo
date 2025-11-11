@@ -7,7 +7,7 @@ A clean, responsive, and searchable static website to display a personal collect
 ## 📸 Live Demo & Screenshot
 
 You can view the live, deployed version here:
-**[https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/](https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/)**
+**[https://abishek-2425.github.io/card-repo/](https://abishek-2425.github.io/card-repo/)**
 
 *(Replace this text with a screenshot of your site!)*
 ![Screenshot of the Cardex website]
