@@ -2,7 +2,7 @@
 
 A clean, responsive, and searchable static website to display a personal collection of business cards. Built with pure HTML, CSS, and JavaScript, and hosted for free on GitHub Pages.
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-00aaff?style=for-the-badge&logo=github)](https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-00aaff?style=for-the-badge&logo=github)](https://abishek-2425.github.io/card-repo/)
 
 ## 📸 Live Demo & Screenshot
 
