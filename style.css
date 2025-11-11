@@ -1,0 +1,167 @@
+/* 1. Global Setup & Variables */
+:root {
+    --bg-color: #1a1a1a;
+    --card-color: #2a2a2a;
+    --text-color: #f0f0f0;
+    --text-color-muted: #aaaaaa;
+    --accent-color: #00aaff;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+/* 2. Header & Search */
+.header-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header-container h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.header-container p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: var(--text-color-muted);
+}
+
+.search-container {
+    margin-bottom: 40px;
+}
+
+#search-bar {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--card-color);
+    border: 1px solid #444;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* 3. Card Grid */
+.card-grid {
+    display: grid;
+    /* This creates a responsive grid: */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 4. Individual Card Styling */
+.business-card {
+    background-color: var(--card-color);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: all 0.3s ease;
+    border: 1px solid #444;
+    /* Used by JS to hide non-matching cards */
+    display: block; 
+}
+
+.business-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+    border-color: var(--accent-color);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card-header p {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.card-body {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.contact-info p i {
+    color: var(--text-color-muted);
+    width: 20px;
+    text-align: center;
+}
+
+.contact-info p a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info p a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.card-footer {
+    text-align: center;
+}
+
+.social-links a {
+    font-size: 1.8rem;
+    color: var(--text-color-muted);
+    margin: 0 12px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* 5. Utility class for search */
+.hide {
+    display: none;
+}

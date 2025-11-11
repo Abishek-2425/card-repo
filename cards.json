@@ -1,0 +1,53 @@
+[
+  {
+    "full_name": "Jane Doe",
+    "job_title": "Lead UI/UX Designer",
+    "company_name": "Creative Solutions",
+    "phone_number": "+1 123-456-7890",
+    "email": "jane.doe@creative.com",
+    "website": "https://creative-solutions.dev",
+    "image_url": "https://i.pravatar.cc/150?img=25",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/janedoe",
+      "dribbble": "https://dribbble.com/janedoe"
+    }
+  },
+  {
+    "full_name": "John 'Dev' Smith",
+    "job_title": "Senior Full-Stack Engineer",
+    "company_name": "Tech Innovations",
+    "phone_number": "+1 987-654-3210",
+    "email": "j.smith@techinnovations.dev",
+    "website": "https://techinnovations.dev",
+    "image_url": "https://i.pravatar.cc/150?img=68",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/johnsmith",
+      "github": "https://github.com/johnsmith"
+    }
+  },
+  {
+    "full_name": "Dr. Alex Chen",
+    "job_title": "AI Research Scientist",
+    "company_name": "FutureCore AI",
+    "phone_number": "+1 555-123-4567",
+    "email": "a.chen@futurecore.ai",
+    "website": "https://futurecore.ai",
+    "image_url": "https://i.pravatar.cc/150?img=56",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/alexchen"
+    }
+  },
+  {
+    "full_name": "Maria Garcia",
+    "job_title": "Marketing Director",
+    "company_name": "Momentum Ventures",
+    "phone_number": "+1 555-987-6543",
+    "email": "maria@momentum.vc",
+    "website": "https://momentum.vc",
+    "image_url": "https://i.pravatar.cc/150?img=47",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/mariagarcia",
+      "twitter": "https://twitter.com/mariagarcia"
+    }
+  }
+]
