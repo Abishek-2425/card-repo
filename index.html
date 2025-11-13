@@ -23,13 +23,6 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Secret Access Logic -->
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const SECRET_KEY = "cardex-secret"; // change this for your own use
-    window.CARDEX_SECRET_ACCESS = urlParams.get("key") === SECRET_KEY;
-  </script>
-
   <!-- App Script -->
   <script src="app.js" defer></script>
 </head>
