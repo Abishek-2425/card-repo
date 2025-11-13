@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let allCardElements = [];
 
     // Secret key for viewing private "met_at" field
-    const SECRET_KEY = "supersecret123"; // <-- change this to your own secret phrase
+    const SECRET_KEY = "abish"; // <-- change this to your own secret phrase
     const urlParams = new URLSearchParams(window.location.search);
     const providedKey = urlParams.get("key");
     const showPrivate = providedKey === SECRET_KEY;
