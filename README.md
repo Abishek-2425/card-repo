@@ -2,16 +2,13 @@
 
 A sleek, responsive, and **searchable digital collection** of business cards. Built with **HTML, CSS, and vanilla JavaScript**, Cardex lets you organize, view, and privately annotate cards — hosted effortlessly on **GitHub Pages**.
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-00aaff?style=for-the-badge\&logo=github)](https://abishek-2425.github.io/card-repo/)
-
 ---
-
 ## 🚀 Live Demo
 
-**Live Site:** [https://abishek-2425.github.io/card-repo/](https://abishek-2425.github.io/card-repo/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-00aaff?style=for-the-badge\&logo=github)](https://abishek-2425.github.io/card-repo/)
 
-*(You can add a screenshot here!)*
-![Screenshot of the Cardex website](#)
+
+![Screenshot of the Cardex website](./screenshot.png)
 
 ---
 
