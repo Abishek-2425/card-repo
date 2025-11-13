@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardex - Business Card Repository</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardex - Business Card Repository</title>
 
-    <!-- Fonts and Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-pbGhVnZlTnU+RSKi4c1fEJq/KTW7oZ7v1wQK+Z5zYbNf7VogpAFcZgZBqR4/wso8y86X1OqH7P5S6xjKC+3w5A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
 
-    <!-- Secret Access Logic -->
-    <script>
-        // Extract query parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        // Define your secret access key
-        const SECRET_KEY = "cardex-secret";  // <-- change this to your private key
-        // Check if user entered the correct key
-        window.CARDEX_SECRET_ACCESS = urlParams.get("key") === SECRET_KEY;
-    </script>
+  <!-- Secret Access Logic -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const SECRET_KEY = "cardex-secret"; // change this for your own use
+    window.CARDEX_SECRET_ACCESS = urlParams.get("key") === SECRET_KEY;
+  </script>
 
-    <!-- App Script -->
-    <script src="app.js" defer></script>
+  <!-- App Script -->
+  <script src="app.js" defer></script>
 </head>
+
 <body>
+  <header class="header-container">
+    <h1>Cardex</h1>
+    <p>My Personal Business Card Collection</p>
+  </header>
 
-    <header class="header-container">
-        <h1>Cardex</h1>
-        <p>My Personal Business Card Collection</p>
-    </header>
+  <div class="search-container">
+    <input
+      type="search"
+      id="search-bar"
+      placeholder="Search by name, company, or title..."
+    />
+  </div>
 
-    <div class="search-container">
-        <input type="search" id="search-bar" placeholder="Search by name, company, or title...">
-    </div>
-
-    <main class="card-grid" id="card-grid"></main>
-
+  <main class="card-grid" id="card-grid"></main>
 </body>
 </html>

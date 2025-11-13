@@ -1,215 +1,174 @@
-/* =========================
-   Global Styles & Variables
-   ========================= */
+/* =========================================================
+   CARDEX - Business Card Repository
+   Author: Nova
+   Purpose: Unified modern dark theme for all cards & layout
+   ========================================================= */
+
+/* ---------- Global Theme Variables ---------- */
 :root {
-    --bg-color: #101010;
-    --card-bg: #1c1c1e;
-    --text-primary: #f2f2f2;
-    --text-secondary: #a0a0a0;
-    --accent: #00c2ff;
-    --border-color: #2e2e2e;
-    --shadow: rgba(0, 0, 0, 0.4);
-    --radius: 14px;
-    --transition: 0.3s ease;
+    --bg: #0e0e0e;
+    --card-bg: #181818;
+    --text: #eaeaea;
+    --accent: #00b4d8;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --radius: 16px;
+    --transition: 0.25s ease;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* ---------- Base Page Setup ---------- */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    padding: 40px 20px;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
     min-height: 100vh;
-    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* =========================
-   Header
-   ========================= */
+/* ---------- Header Section ---------- */
 .header-container {
     text-align: center;
-    margin-bottom: 50px;
-    animation: fadeIn 1s ease forwards;
+    margin-top: 40px;
 }
 
 .header-container h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--accent);
-    letter-spacing: 1px;
+    margin: 0;
 }
 
 .header-container p {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-top: 8px;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-top: 4px;
 }
 
-/* =========================
-   Search Bar
-   ========================= */
+/* ---------- Search Bar ---------- */
 .search-container {
-    text-align: center;
-    margin-bottom: 40px;
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
 }
 
 #search-bar {
-    width: 90%;
-    max-width: 550px;
+    width: 100%;
     padding: 14px 18px;
-    font-size: 1rem;
-    color: var(--text-primary);
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: var(--radius);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 10px var(--shadow);
     transition: var(--transition);
 }
 
 #search-bar:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
+    box-shadow: 0 0 16px var(--accent);
 }
 
-/* =========================
-   Card Grid Layout
-   ========================= */
+/* ---------- Card Grid Layout ---------- */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
-    animation: fadeInUp 1s ease forwards;
+    margin-bottom: 60px;
 }
 
-/* =========================
-   Business Card Styling
-   ========================= */
+/* ---------- Business Card ---------- */
 .business-card {
     background-color: var(--card-bg);
     border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 6px 18px var(--shadow);
-    overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    padding: 24px;
+    box-shadow: 0 0 12px var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow var(--transition);
+    
+    /* Fade-in effect for cards when loaded */
+    opacity: 0;
+    animation: cardFadeIn 0.6s ease forwards;
 }
 
 .business-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px var(--shadow);
-    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--accent);
 }
 
-/* Card Header */
-.card-header {
-    text-align: center;
-    padding: 24px 20px 10px;
-}
-
-.card-header img {
-    width: 95px;
-    height: 95px;
+/* ---------- Card Image ---------- */
+.business-card img {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--accent);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    border: 2px solid var(--accent);
 }
 
-.card-header h3 {
-    font-size: 1.3rem;
+/* ---------- Card Text ---------- */
+.business-card h2 {
+    margin: 10px 0 4px 0;
+    font-size: 1.2rem;
     font-weight: 600;
+    color: var(--text);
 }
 
-.card-header p {
-    font-size: 1rem;
-    color: var(--accent);
-    font-weight: 500;
-}
-
-/* Card Body */
-.card-body {
-    padding: 10px 22px 20px;
-    color: var(--text-primary);
-}
-
-.contact-info p {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+.business-card p {
+    margin: 2px 0;
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    opacity: 0.85;
 }
 
-.contact-info p i {
-    color: var(--accent);
-    width: 18px;
-    text-align: center;
-}
-
-.contact-info a {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.contact-info a:hover {
-    color: var(--accent);
-}
-
-/* Notes and Met Info */
-.note {
-    margin-top: 12px;
-    padding-top: 8px;
-    border-top: 1px dashed var(--border-color);
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
+/* ---------- Optional Contact Info (shown only if allowed) ---------- */
 .met-info {
-    margin-top: 8px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--accent);
+    opacity: 0.8;
+}
+
+/* ---------- “Met At” Info (hidden behind secret key) ---------- */
+.met-at {
+    margin-top: 6px;
     font-size: 0.85rem;
     color: var(--accent);
-    opacity: 0.9;
+    opacity: 0.8;
+    font-style: italic;
 }
 
-/* Card Footer */
-.card-footer {
-    text-align: center;
-    padding-bottom: 15px;
+/* ---------- Animation Keyframes ---------- */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.social-links a {
-    font-size: 1.6rem;
-    color: var(--text-secondary);
-    margin: 0 10px;
-    transition: all var(--transition);
+/* ---------- Responsive Design Tweaks ---------- */
+@media (max-width: 600px) {
+    .header-container h1 {
+        font-size: 2rem;
+    }
+
+    #search-bar {
+        font-size: 0.95rem;
+        padding: 12px 14px;
+    }
+
+    .business-card {
+        padding: 20px;
+    }
 }
 
-.social-links a:hover {
-    color: var(--accent);
-    transform: scale(1.1);
-}
-
-/* =========================
-   Utility & Animation
-   ========================= */
-.hide {
-    display: none;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* =========================================================
+   END OF FILE
+   Tip: Adjust --accent or --card-bg for instant color refresh
+   ========================================================= */

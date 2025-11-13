@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch card data from the JSON file
     fetch('cards.json')
         .then(response => response.json())
-        .then(cards => {
-            allCardsData = cards;
+        .then(data => {
+            // Updated JSON format now has: { "cards": [ ... ] }
+            allCardsData = data.cards || [];
             displayCards(allCardsData);
         })
         .catch(error => {
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createCardElement(card) {
         const cardElement = document.createElement('div');
         cardElement.classList.add('business-card');
-        cardElement.dataset.name = `${card.full_name} ${card.job_title} ${card.company_name}`.toLowerCase();
+        cardElement.dataset.name = `${card.full_name || ''} ${card.job_title || ''} ${card.company_name || ''}`.toLowerCase();
 
         const socials = card.socials || {};
         const socialLinks = `
@@ -63,17 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cardElement.innerHTML = `
             <div class="card-header">
-                <img src="${card.image_url || 'https://i.pravatar.cc/150'}" alt="${card.full_name}">
-                <h3>${card.full_name}</h3>
-                <p>${card.job_title}</p>
+                <img src="${card.image_url || 'https://i.pravatar.cc/150'}" alt="${card.full_name || 'Profile'}">
+                <h3>${card.full_name || 'Unnamed'}</h3>
+                <p>${card.job_title || ''}</p>
             </div>
 
             <div class="card-body">
                 <div class="contact-info">
-                    <p><i class="fa-solid fa-building"></i> ${card.company_name}</p>
-                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:${card.email}">${card.email}</a></p>
-                    <p><i class="fa-solid fa-phone"></i> ${card.phone_number}</p>
-                    <p><i class="fa-solid fa-globe"></i> <a href="${card.website}" target="_blank">${card.website}</a></p>
+                    ${card.company_name ? `<p><i class="fa-solid fa-building"></i> ${card.company_name}</p>` : ''}
+                    ${card.email ? `<p><i class="fa-solid fa-envelope"></i> <a href="mailto:${card.email}">${card.email}</a></p>` : ''}
+                    ${card.phone_number ? `<p><i class="fa-solid fa-phone"></i> ${card.phone_number}</p>` : ''}
+                    ${card.website ? `<p><i class="fa-solid fa-globe"></i> <a href="${card.website}" target="_blank">${card.website}</a></p>` : ''}
                     ${noteHTML}
                     ${metAtHTML}
                 </div>
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
+
         return cardElement;
     }
 
