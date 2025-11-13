@@ -13,16 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetch card data from the JSON file
     fetch('cards.json')
-        .then(response => response.json())
-        .then(data => {
-            // Updated JSON format now has: { "cards": [ ... ] }
-            allCardsData = data.cards || [];
-            displayCards(allCardsData);
-        })
-        .catch(error => {
-            console.error('Error fetching card data:', error);
-            cardGrid.innerHTML = "<p>Error loading cards. Please try again later.</p>";
-        });
+    .then(response => response.json())
+    .then(data => {
+        // Handle both array and object JSON formats
+        allCardsData = Array.isArray(data) ? data : data.cards || [];
+        displayCards(allCardsData);
+    })
+    .catch(error => {
+        console.error('Error fetching card data:', error);
+        cardGrid.innerHTML = "<p>Error loading cards. Please try again later.</p>";
+    });
+
 
     /**
      * Creates and displays the card elements in the grid
@@ -57,10 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
             ${socials.twitter ? `<a href="${socials.twitter}" target="_blank" title="Twitter"><i class="fa-brands fa-twitter"></i></a>` : ''}
         `;
 
-        const noteHTML = card.note ? `<p class="note"><strong>Note:</strong> ${card.note}</p>` : '';
+        // Only show note and met_at if the correct secret key is provided
+        const noteHTML = showPrivate && card.note
+            ? `<p class="note"><strong>Note:</strong> ${card.note}</p>`
+            : '';
+
         const metAtHTML = showPrivate && card.met_at
             ? `<p class="met-at" style="color: #888;"><em>Met at: ${card.met_at}</em></p>`
             : '';
+
 
         cardElement.innerHTML = `
             <div class="card-header">
